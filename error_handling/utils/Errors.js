@@ -21,12 +21,10 @@ class LogError extends Error {
 // Catch Error Function created for using in our controllers to catch errors globally and by instance of error send to client
 function CatchError(e, res) {
     if (e instanceof LogError) {
-        console.log('error in server', e.message);
         return res.status(e.status).send({error: "Something went wrong"});
     } else if (e instanceof SendError) {
         return res.status(e.status).send({error: e.message});
     } else {
-        console.log('error in server', e.message);
         return res.status(e.status || 500).send({error: "Something went wrong"});
     }
 }
