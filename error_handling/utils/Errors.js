@@ -27,6 +27,7 @@ function CatchError(e, res) {
     } else {
         return res.status(e.status || 500).send({error: "Something went wrong"});
     }
+    console.log('test2 ------------>');
 }
 
 module.exports = {LogError, SendError, CatchError};
