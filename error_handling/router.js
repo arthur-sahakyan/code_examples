@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./controllers/controller');
 
-router.post('/api/log', controller.logErrorFunction);
-router.post('/api/send', controller.sendErrorFunction);
-router.post('/api/other', controller.otherErrorFunction);
+router.post('/api/signup', controller.signup);
+router.post('/api/login', controller.login);
 
 module.exports = router;
 
